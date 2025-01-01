@@ -1,0 +1,1090 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+            cursor: default;
+        }
+        html body{
+            height: 100%;
+            width: 100%;
+        }
+        .top{
+            height: 50px;
+            width: 50px;
+            position: fixed;
+            z-index: 7;
+            background-color: white;
+            border-radius: 50%;
+            top: 85%;
+            left: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+        }
+        .top a{
+            color: black;
+            text-decoration: none;
+            font-size: 1vw;
+            font-weight: 900;
+        }
+
+
+        .main .loading{
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 10;
+            background-color: transparent;
+            transform: translateY(0px);
+            animation: loading 1s 1 4s ease-in forwards;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes loading {
+            0%{
+                transform: translateY(0px);
+            }100%{
+                transform: translateY(-1000px);
+            }
+
+        }
+
+        .main .loading .bar{
+            height: 14%;
+            width: 100%;
+            background-color: white;
+            
+        }
+        .main .loading #bar1{
+            animation: bar 0.5s 1 1s ease-in forwards;
+        }
+        .main .loading #bar2{
+            animation: bar 0.5s 1 1.2s ease-in forwards;
+        }
+        .main .loading #bar3{
+            animation: bar 0.5s 1 1.4s ease-in forwards;
+        }
+        .main .loading #bar4{
+            animation: bar 0.5s 1 1.6s ease-in forwards;
+        }
+        .main .loading #bar5{
+            animation: bar 0.5s 1 1.8s ease-in forwards;
+        }
+        .main .loading #bar6{
+            animation: bar 0.5s 1 2s ease-in forwards;
+        }
+        .main .loading #bar7{
+            animation: bar 0.5s 1 2.2s ease-in forwards;
+        }
+        .main .loading #bar8{
+            animation: bar 0.5s 1 2.4s ease-in forwards;
+        }
+        .main .loading #bar9{
+            animation: bar 0.5s 1 2.6s ease-in forwards;
+        }
+        .main .loading #bar10{
+            animation: bar 0.5s 1 2.8s ease-in forwards;
+        }
+        .main .loading #bar11{
+            animation: bar 0.5s 1 3s ease-in forwards;
+        }
+        .main .loading #bar12{
+            animation: bar 0.5s 1 3.2s ease-in forwards;
+        }
+        .main .loading #bar13{
+            animation: bar 0.5s 1 3.4s ease-in forwards;
+        }
+        .main .loading #bar14{
+            animation: bar 0.5s 1 3.6s ease-in forwards;
+        }
+        @keyframes bar{
+            0%{
+                transform: translateX(0px);
+                display: block;
+            }99%{
+                display: block;
+                transform: translateX(1500px);
+            }100%{
+                display: block;
+                transform: translateX(1500px);
+            }
+        }
+        @keyframes to-right{
+            from{
+                transform: translateX(-10rem);
+            }to{
+                transform: translateX(0rem);
+            }
+
+        }
+        .main .login{
+            position: fixed;
+            top: 20%;
+            left: 25%;
+            height: 30vw;
+            width: 40%;
+            backdrop-filter: blur(10px);
+            z-index: 6;
+            border-radius: 1rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            padding: 0vw 5vw;
+            transition: all 1s ease-in;
+            border: 0.5px solid white;
+        }
+        .main .login .formin{
+            border: 0px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            width: 100%;
+           
+        }
+        .main .login h1{
+            font-size: 3.4vw;
+            margin-right: 0vw;
+            border-bottom: 1px solid white;
+            color: white;
+            padding: 1vw 0vw;
+            width: 100%;
+        }
+        .main .login .formin .input{
+            width: 100%;
+            padding: 2vw 0vw;
+            display: flex;
+
+        }
+        .main .login .formin .input label{
+            font-size: 1.5vw;
+            width: 20%;
+            color: white;
+        }
+        .main .login .formin .input input{
+            width: 70%;
+            height: 2.7vw;
+            outline: none;
+            border: none;
+            border: 0.5px solid white;
+            border-radius: 0.2rem;
+            font-size: 1vw;
+            background-color: transparent;
+            color: white;
+
+        }
+        .main .login .formin .bottom{
+            display: flex;
+            width: 100%;
+            height: 3vw;
+            border: 0px solid black;
+            padding: 0vw 0vw;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .main .login .formin .bottom input{
+            height: 2.7vw;
+            width: 8vw;
+            font-size: 1.3vw;
+            border-radius: 0.5rem;
+            outline: none;
+            border: none;
+            background: linear-gradient(to right, #D0BDF4, #8458B3) ;
+            color: black;
+            cursor: pointer;
+        }
+        .main .login .formin .bottom a{
+            color: white;
+        }
+        .main .page1{
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            position: relative;
+            background-color: black;
+            z-index: 1;
+            flex-direction: column;
+            border-bottom: 0px solid white;
+        }
+        .main .page1 nav{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0vw 5.6vw;
+            margin-top: 2vw;
+            transform: translateX(-10rem);
+            animation: to-right 0.5s 1 1s ease-out forwards;
+        }
+        .main .page1 nav .logo{
+            height: 100px;
+        }
+        .main .page1 nav .nav2{
+            margin-left: -30vw;
+            display: flex;
+            align-items: center;
+            gap: 3vw;
+        }
+        .main .page1 nav .nav2 a{
+            color: white;
+            text-decoration: none;
+            font-size: 1.5vw;
+            font-weight: 200;
+            cursor: pointer;
+            z-index: 5;
+            transition: all 0.5s linear;
+        }
+        .main .page1 nav .nav2 a:hover{
+            border-bottom: 2px solid white;
+            transform: translateY(-0.5vw);
+        }
+        .main .page1 nav .nav3{
+            margin-right: 10vw;
+            cursor: pointer;
+        } 
+        .main .page1 nav .nav3 .profile{
+            cursor: pointer;
+            height: 40px;
+            border-radius: 50rem;
+            z-index: 10;
+        }
+        .main .page1 .ark{
+            display: flex;
+            width: 100%;
+            margin-top: 5vw;
+        }
+        .main .page1 .ark img{
+            border: 0px solid white;
+            z-index: 1;
+            
+        }
+        .main .page1 .ark .head{
+            display: flex;
+            flex-direction: column;
+            border: 0px solid white;
+            margin-left: 0vw;
+            width: 40%;
+            padding: 1vw 3vw;
+        }
+        .main .page1 .ark .head h5{
+            font-size: 1.1vw;
+            color: white;
+            margin-top: 1.5vw;
+            cursor: default;
+        }
+        .main .page1 .ark .head h2{
+            color: white;
+            font-size: 3.5vw;
+            width: 70%;
+            margin-top: 1.5vw;
+            cursor: default;
+        }
+        .main .page1 .ark .head h6{
+            height: 1.2vw;
+            font-size: 1.1vw;
+            color: white;
+            margin-top: 1.5vw;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+            border: 0px solid white;
+            animation: h6 20s infinite 0s steps(100) forwards;
+        }
+        
+        .main .page1 .ark .head button{
+            margin-top: 2vw;
+            width: 10vw;
+            height: 3vw;
+            border-radius: 0.5rem;
+            border: none;
+            background: linear-gradient(to right, #E5EAF5, #8458B3, #461fb3);
+            transition: all 0.5s ease-in;
+        }
+        .main .page1 .ark .head button:hover{
+            border-radius: 3rem;
+        }
+        .main .page1 .ark .h1{
+            display: flex;
+            position: absolute;
+            top: 0%;
+            left: 88%;
+            flex-direction: column;
+        }
+        .main .page1 .ark .h1 .pg1h1{
+            color: rgba(255, 255, 255, 0.068);
+            font-size: 6vw;
+            margin: 0vw;
+            font-weight: 100;
+            cursor: default;
+        }
+        .main .page1 .scroll{
+            display: flex;
+            position: absolute;
+            top: 85%;
+            left: 3%;
+            align-items: center;
+            z-index: 2;
+            overflow: visible;
+        }
+        .main .page1 .scroll h6{
+            color: rgba(255, 255, 255, 0.438);
+            font-size: 2vw;
+            cursor: default;
+        }
+        .main .page1 .scroll .scroll1{
+            height: 2px;
+            width: 40vw;
+            background-color: rgba(255, 255, 255, 0.356);
+        }
+        .main .page2{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            background-color: #121212;
+            overflow: hidden;
+        }
+        .main .page2 .content{
+           
+            height: 100%;
+            width: 100%;
+            padding: 3vw 5vw;
+        }
+        .main .page2 .content h2{
+            font-size: 3vw;
+            padding: 1.5vw 0vw;
+            border-bottom: 1.5px solid white;
+            color: #461fb3;
+            font-weight: 900;
+        }
+        .main .page2 .content p{
+            margin-top: 4vw;
+            font-size: 1.5vw;
+            color: white;
+        }
+        .main .page3{
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+       
+        .main .page3 video{
+            width: 100%;
+            position: absolute;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .main .page3 .frame{
+            height: 90%;
+            width: 90%;
+            border: 1px solid white;
+            position: absolute;
+            border-radius: 3rem;
+        }
+        .main .page3 .cursor{
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #461fb3;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            scale: 0;
+            transition: all 0.5s linear;
+            transform: translate(-50%, -50%);
+        }
+        
+        .main .page4{
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #121212;
+        }
+        .main .page4 .rules{
+           
+           height: 100%;
+           width: 100%;
+           padding: 1.5vw 5vw;
+        }
+        .main .page4 .rules h2{
+            font-size: 3vw;
+            padding: 1.5vw 0vw;
+            color: #461fb3;
+            font-weight: 900;
+            border-bottom: 1px solid white;
+        }
+        .main .page4 .rules ol{
+            border: 0px solid black;
+            width: 90%;
+            color: white;
+        }
+        .main .page4 .rules ol .li{
+            margin-top: 1.5vw;
+            color: transparent;
+            cursor: pointer;
+            position: relative;
+            padding: 1vw 0vw;
+            background-color: #121212;
+            border-radius: 1rem;
+            padding: 1vw 2vw;
+        }
+        .main .page4 .rules ol .li:hover img{
+            scale: 1;
+            opacity: 100%;
+        }
+        .main .page4 .rules ol .li img{
+            position: absolute;
+            height: 15vw;
+            left: 70%;
+            top: 0;
+            z-index: 7;
+            scale: 0;
+            opacity: 0%;
+            border-radius: 0.5vw;
+            transform: translateY(-9vw);
+            transition: all 0.4s linear;
+        }
+        .main .page4 .rules ol li ul li{
+            margin-top: 0.5vw;
+        }
+        .main .page4 .rules ol li h4{
+            color: #461fb3;
+            font-size: 1.7vw;
+            font-weight: 600;
+            
+        }
+        .main .page4 .rules ol li p{
+            font-size: 1.5vw;
+            color: white;
+            font-weight: 100;
+        }
+        .main .page5{
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            border: 0px solid white;
+            overflow: hidden;
+            background-color: black;
+        }
+        .main .page5 h2{
+            font-size: 3vw;
+            padding: 1.5vw 0vw;
+            border-bottom: 1.5px solid white;
+            color: #461fb3;
+            font-weight: 900;
+            margin-top: 5vw;
+            margin-left: 5vw;
+        }
+        .main .page5 .players{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 2vw 5vw;
+        }
+        .main .page5 .players .part{
+            display: flex;
+            align-items: center;
+            border: 0px solid white;
+            height: 20vw;
+            width: 90%;
+            position: relative;
+            border-radius: 1vw;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.075);
+            margin-top: 3vw;
+            border: 0px solid white;
+        }
+        .main .page5 .players .part .img{
+            border: 0px solid white;
+            width: 0%;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.5s ease-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid white;
+        }
+        .main .page5 .players .part .img img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            scale: 1.15;
+            border: 0px solid white;
+        }
+        .main .page5 .players .part:hover .img{
+            width: 20%;
+        }
+        .main .page5 .players .part .part1{
+            height: 100%;
+            width: 100%;
+            border: 0px solid white;
+            padding: 3vw 5vw;
+            transition: all 0.5s ease-in;
+
+        }
+        .main .page5 .players .part .part1 h3{
+            color: white;
+            margin-top: 3vw;
+            font-size: 2vw;
+        }
+        .main .page5 .players .part .part1 p{
+            color: white;
+            margin-top: 1.5vw;
+            font-size: 1.2vw;
+        }
+        .main .page6{
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main .page6 video{
+            width: 100%;
+            position: absolute;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .main .page6 #cursor{
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #461fb3;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            scale: 0;
+            transition: all 0.5s linear;
+            transform: translate(-50%, -50%);
+        }
+        .main .page7{
+            height: 50vh;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3vw 0vw;
+            overflow: hidden;
+        }
+		
+        .main .page7 .credit{
+            height: 100%;
+            width: 100%;
+            border: 0px solid black;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 3vw 5vw;
+        }
+        .main .page7 .credit h3{
+            font-size: 3.5vw;
+            font-weight: 100;
+            width: 80%;
+            border-bottom: 1.5px solid black;
+        }
+        .main .page7 .credit h4{
+            font-size: 1.7vw;
+            font-weight: 200;
+            margin-top: 2vw;
+        }
+        .main .page7 .credit h5{
+            font-size: 1.7vw;
+            font-weight: 700;
+            margin-top: 1vw;
+        }
+        .main .page7 .credit ul{
+            margin-top: 0.2vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+        .main .page7 .credit ul li{
+            margin: 0.3vw 0vw;
+            display: flex;
+            flex-direction: row;
+            border: 0px solid black;
+            width: 29vw;
+            font-size: 1.5vw;
+            font-weight: 200;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <a href="#home">TOP</a>
+        </div>
+        <div class="loading">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+            <div class="bar" id="bar4"></div>
+            <div class="bar" id="bar5"></div>
+            <div class="bar" id="bar6"></div>
+            <div class="bar" id="bar7"></div>
+            <div class="bar" id="bar8"></div>
+            <div class="bar" id="bar9"></div>
+            <div class="bar" id="bar10"></div>
+            <div class="bar" id="bar11"></div>
+            <div class="bar" id="bar12"></div>
+            <div class="bar" id="bar13"></div>
+            <div class="bar" id="bar14"></div>
+        </div>
+
+        <div class="login">
+            <h1>Login</h1>
+            <div class="formin">
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="" id="email">
+                </div>
+                <div class="input">
+                    <label for="pass">Password</label>
+                    <input type="password" name="" id="pass">
+
+                </div>
+                <div class="bottom">
+                    <input type="submit" value="submit">
+                    <a href="">forgot password</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page1" id="home">
+            <nav>
+                <img class="logo" src="images/logo.png" alt="">
+                
+                <div class="nav2">
+                    <a href="#home">home</a>
+                    <a href="#intro">intro</a>
+                    <a href="#laws">laws</a>
+                    <a href="#players">players</a>
+                    <a href="#credit">credit</a>
+                </div>
+                <div class="nav3">
+                    
+                    <img class="profile" src="images/profile.png" alt="">
+                </div>
+            </nav>
+            <div class="ark">
+                <img class="pg1bg" src="bg/b1.jpg" alt="">
+                <div class="h1">
+                    <h1 id="pg1h11" class="pg1h1">C</h1>
+                    <h1 id="pg1h12" class="pg1h1">R</h1>
+                    <h1 id="pg1h13" class="pg1h1">I</h1>
+                    <h1 id="pg1h14" class="pg1h1">C</h1>
+                    <h1 id="pg1h15" class="pg1h1">K</h1>
+                    <h1 id="pg1h16" class="pg1h1">E</h1>
+                    <h1 id="pg1h17" class="pg1h1">T</h1>
+                </div>
+
+                <div class="head">
+                    <h5>SPORTS</h5>
+                    <h2>Introduction To Cricket & Info</h2>
+                    <h6 id="h6" data-text="One of the famous sport.">One of the famous sport.</h6>
+                    <button>READ MORE</button>
+                </div>
+
+            </div>
+            <div class="scroll">
+                <h6>scroll</h6>
+                <div class="scroll1"></div>
+            </div>
+            
+       </div>
+
+       <div class="page2" id="intro">
+            <div class="content">
+                <h2>INTRODUCTION ON CRICKET</h2>
+                <p>Cricket is one of the most popular and beloved sports in the world, especially in countries like India, Australia, England, Pakistan, and South Africa. With its roots tracing back to the 16th century in England, cricket has evolved into a global sport played at various levels, from street games to international competitions. It is a sport that combines strategy, skill, and athleticism, captivating audiences with its rich history and exciting gameplay.
+
+                    At its core, cricket is a bat-and-ball game played between two teams, each consisting of eleven players. The game is typically played on a large, oval-shaped field with a pitch in the center. The primary objective of cricket is for one team to score more runs than the other while also trying to dismiss the opposition's players through various forms of bowling and fielding techniques.
+                
+                    Cricket is known for its distinctive formats, ranging from traditional Test matches, which can last up to five days, to the faster-paced One-Day Internationals (ODIs) and the thrilling Twenty20 (T20) matches, which are completed in a few hours. Each format brings a unique set of challenges, requiring different skills and strategies. While Test cricket is often seen as the pinnacle of the game, requiring patience and endurance, T20 cricket has revolutionized the sport with its emphasis on aggression and entertainment.
+                
+                    Beyond the boundaries of the field, cricket has fostered a sense of camaraderie and national pride among players and fans. Iconic players like Sachin Tendulkar, Sir Donald Bradman, Brian Lara, Mahendra Singh Dhoni and Virat Kohli have become legends of the game, inspiring millions of young cricketers. As a sport, cricket continues to grow, bringing together diverse cultures and nations through its universal appeal.</p>
+            </div>
+            <div class="content2">
+                
+            </div>
+       
+        </div>
+
+
+        <div class="page3">
+            <video autoplay muted loop src="videos/bg.mp4"></video>
+           
+            <div class="cursor"></div>
+            <div class="frame"></div>
+        </div>
+
+        <div class="page4" id="laws">
+            <div class="rules">
+                <h2>BASIC CRICKET LAWS</h2>
+                <div class="rules1">
+                    <ol>
+                        <li class="li">
+                            <h4>The Players</h4>
+                            <ul>
+                                <li>
+                                    <p>Cricket is played between two teams, each consisting of 11 players. The team batting first aims to score as many runs as possible, while the team bowling/fielding aims to dismiss the batsmen and limit the runs.</p>
+                                </li>
+                            </ul>
+                            <img src="images/player.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Batting and Fielding Team</h4>
+                            <ul>
+                                <li>
+                                    <p>One team bats, the other fields. The batting team has two batsmen on the field at a time. The fielding team consists of a bowler, wicketkeeper, and fielders.</p>
+                                </li>
+                            </ul>
+                            <img src="images/batsman.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Overs</h4>
+                            <ul>
+                                <li>
+                                    <p>A standard over consists of six legal deliveries. After each over, the bowler switches ends, and the fielding team must rotate accordingly.</p>
+                                </li>
+                            </ul>
+                            <img src="images/sixballs.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Umpires</h4>
+                            <ul>
+                                <li>
+                                    <p>There are two on-field umpires who make decisions during the game. A third umpire may be used for video replays in some formats (e.g., TV umpires in limited-overs cricket).</p>
+                                </li>
+                            </ul>
+                            <img src="images/umpire.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Bat</h4>
+                            <ul>
+                                <li>
+                                    <p>The bat is made of wood, and its maximum width is 4.25 inches (10.8 cm). The length can vary, but it must not exceed 38 inches (96.5 cm).</p>
+                                </li>
+                            </ul>
+                            <img src="images/bat.webp" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Ball</h4>
+                            <ul>
+                                <li>
+                                    <p>The cricket ball is typically made of a hard leather shell with a cork core. Its weight is between 5.5 and 5.75 ounces (155.9 – 163.0 g), and its circumference is around 9 inches (22.4 cm).</p>
+                                </li>
+                            </ul>
+                            <img src="images/ball.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Pitch</h4>
+                            <ul>
+                                <li>
+                                    <p>The pitch is a rectangular area of 22 yards (20.12 meters) in length, with wickets at either end. It should be dry and level for consistent play.</p>
+                                </li>
+                            </ul>
+                            <img src="images/pitch.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Wickets</h4>
+                            <ul>
+                                <li>
+                                    <p>The wicket consists of three stumps, each 28 inches (71.1 cm) tall, with two bails placed on top. The stumps are placed 9 inches (22.86 cm) apart.</p>
+                                </li>
+                            </ul>
+                            <img src="images/wicket.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Role of the Bowler</h4>
+                            <ul>
+                                <li>
+                                    <p>The bowler delivers the ball from one end of the pitch to the batsman at the other end. The bowler must deliver the ball with a straight arm and cannot overstep the crease.</p>
+                                </li>
+                            </ul>
+                            <img src="images/baller.jfif" alt="">
+                        </li>
+                        <li class="li">
+                            <h4>The Role of the Batsman</h4>
+                            <ul>
+                                <li>
+                                    <p>The role of a batsman is to score runs, protect the wicket, and adapt to match situations to help the team succeed.</p>
+                                </li>
+                            </ul>`                            <img src="images/batsman1.jpg" alt="">
+                        </li>
+                        
+                    </ol>
+                </div>
+
+            </div>
+       </div>
+
+
+
+       <div class="page5" id="players">
+            <h2>TOP 10 BEST PLAYERS</h2>
+            <div class="players">
+                
+                <div class="part">
+                    <div class="img">
+                        <img src="images/virat.jpg" alt="">
+                    </div>
+                    
+                    <div class="part1">
+                        <h3>Virat Kolhi</h3>
+                        <p>Virat kholi is a professional indian cricketer and the current captain  of the indian national team. He is considered one of the best batsman in the world and has numerouss records to his name.kholi made his international debut in 2008  and quickly established himself as a top-order batsman.He has a strong aggressive playing style and is know as his fitness and work eithic.kholi has been recipient of many award including the sir Garfield sobers trophy for ICC ODI player of the year in 2017 and 2018.He has also been honored with the ICC ODI player of the years award in 2012,2017,2018 and 2019.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/thala.jpg" alt="">
+                    </div>
+                    
+                    <div class="part1">
+                        <h3>MS Dhoni</h3>
+                        <p>Mahendra Singh Dhoni commonly known as MS-Dhoni is a formar Indian cricketer and captain of the Indian national team. He is considered one of the greatest cricketer in the history of the game and known for his calm and composed leadership style. Dhoni made his international debut in December 2004 and went on the captain India team for over a decade under his captaincy India won the 2007 ICC world twenty 20, 2010 asia cup, the 2010 and 2016 asia cup, and 2007-08 common wealth bank series. He also led India to the number-one soot in the ICC test ranking for the England in the final of thr champions trophy Dhoni became the first captain to win all three ICC limited overs traphies ( world cup, champion trophy and world twenty 20). He retired from international cricket on August 15, 2020.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/ab1.jfif" alt="">
+                    </div>
+                    
+                    <div class="part1">
+                        <h3>AB De Villiers</h3>
+                        <p>AB De villiers commonly known as ABD,is arcired south african cricketer and formar captain of the south african national team.He is considered one of the best batsman in the the world and is known for his aggressive and unorthodox playing style .De villiers made his international dedut in decemder 2004 and went on the become one of the most successfull and popular cricketer of his generation .He is widely regarded as one of the best batsman in the world and one of the greatest ODI players of all time.He holds mangrecords such as the fastest century inODIs by a south african the and fastest century by any in ODIs.He also known as Mr360 due to his ability to play shorts all around the ground.He retired from international cricket in may 2018.</p>
+                    </div>
+                </div>
+                
+                <div class="part">
+                    <div class="img">
+                        <img src="images/chris.png" alt="">
+                    </div>
+                    
+                    <div class="part1">
+                        <h3>Chris Gayle</h3>
+                        <p>Chris Gayle is a west indian cricketer who is considered one of the most destructive batsmen in the sport. He is a left handed opening batsmen and has represent team such as the west indies. jamaica and royal challenger bangalore Gayle is 
+The first player to score a triple century in tests a double century in ODIs and a century in twenty20 internation.he also holds the record for the fastest century in world twenty20 internation gayle is known for his aggressive playing style and powerful hitting. he is also known for his big-hitting in T20 leagues around the world and his player.
+
+                            </p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/sachin.png" alt="">
+                    </div>
+                    
+                    <div class="part1">
+                        <h3>Sachin Tendulkar</h3>
+                        <p>sachin tendulkar is considered one of the greatest cricketer of all time.He is a formar indian cricketer and captain widely regarded as one of the greatest batsmen in the history of cricket.He is the highest run scorer of all time in international cricket.tendulker has scored over 34,000 run in international cricket ,including 100 centuries in ODI cricket.He has also won numerous awards for his performances,including the bharat ratna,india highest civilian award in 2013 tendulker made his debut for indian 1989 and played his last test match in 2013.He retired from ODI cricket in 2012 and T20I cricket in 2013. he is widely regarded as one of the greatest as one of the greatest batsmen of all time and cricketing icon in india.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/ricky.png" alt="">
+                    </div>
+                    
+                    <div class="part1">
+                        <h3>Ricky Ponting</h3>
+                        <p>Ricky ponting is a farmer.Australian cricketer and captain widey regarded as one of the greatest batsman of all time. He 
+                            Is a right handed batsman an a versatile fieldman he represented Austraila international cricketer between 1995 and 2012
+                            ponting is the second most successfull captain in internatinol cricket with 220 wins across all formats heled Austrila to victory in the 2003 and 2007world cup and was also part of the 1999 world cup winner team he is the higest run-scorer in international cricket with over 27000 run across all formats he is one of only tour play prsin cricket history to have scored 
+                            Over 13,000 test run pointing is comsidered one of the greatest batsmen in the history of the game and one of the best -ever 
+                            Australian cricketers.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/rahul.png" alt="">
+                    </div>
+                
+                    <div class="part1">
+                        <h3>Rahul Dravid</h3>
+                        <p>Rahul Dravid is a formar indian cricketer and captain, widely regarded as one of the greatest batsmen in the history of cricket. He is a right-handed batsmen and a specialist slip fielder. He represented india in international cricket between 1996 and 2012. Dravid is often referred to as "The Wall" due to his ability to play long innings and his ability to bat for long periods without losing concentration. He is one of the only two players in the history of cricket to have scored over 10,000 runs in both Test and ODI cricket. He also holds the record for the most number of catches as a fielder in test cricket (210). Dravid was known for his calm and composed demeanor on the field and for his ability to handle pressure situations.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/virendar.png" alt="">
+                    </div>
+                
+                    <div class="part1">
+                        <h3>Virender Sehwag</h3>
+                        <p>Virender sehweag is a tormer indian cricketer and captain widely regarded as one of the most destructive opening batsmen 
+In the history of cricket. He is a right-handed batsmen and a part-time off-spinner. He represented india in internation cricket between 1999 and 2013 sehwag is known his aggressive and unortho dox playing stgle and his ability to score runs 
+Quickely. He is the only indian batsmen to score a tripe century in test cricket and also holds the record for the higest individual score in ODI cricket by an indian he has scored more than 17,000 runs in internation cricket across all formats and has also taken more than 150 wickets as a part time off-spinner.sehwag was known for his ability to take on the best bowfers in the world and for his ability to score runs in all parts of all ground.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/anil.png" alt="">
+                    </div>
+                
+                    <div class="part1">
+                        <h3>Anil Kumble</h3>
+                        <p>Anil kumble is a former aindian cricketer and captain widely regarded as one of the greatest spain bowlers in the history of 
+cricket between 1990 and 2008 kumble is the third-highest wicket-taker in test cricket with 619 wickets only betind muttian muralitharan and shane wane. He is the only bowler to take all ten wickets in a inning of a test match three times.
+Hewas known for his accurancy and his ability to take wickets on only pitch. He has taken over 350 cricket on ODL cricket
+making him one of the most successful spin bowlers in the format kumble was known for his ability to bowl long spells and his ability to take wickets consistently. He was known for his sports manship and his ability to lead by example.</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="img">
+                        <img src="images/kumar.jfif" alt="">
+                    </div>
+                
+                    <div class="part1">
+                        <h3>Kumar Sangakkara</h3>
+                        <p>Kumar Sangakkara is a formar Sri Lankan cricketer and captain, widely regarded as one of the greatest batsmen of all time. He is a left-handed batsmen and a wicketkeeper. He represented Sri Lanka in international cricket between 2000 and 2015 Sangakkara is considered one of the best wicket-keeper batsmen in the history of the game. He is the second-highest run-scorer in international cricket with over 28,000 runs across all formats. He is one of only four players in cricket history to have scored over 13,000 Test runs. He also holds the record for the most number of dismissais by a wicket-keeper in Tests [463] and ODIs [482]. Sangakkara was known for the ability to score runs consistently and his ability to adapt to any situtaion. He is also known for his humble and sportsmanlike attitude off the field.</p>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            
+            
+            
+       </div>
+
+       <div class="page6">
+            <video autoplay muted loop src="videos/shots.mp4"></video>
+            <div id="cursor">
+
+            </div>
+        </div>
+ 
+       <div class="page7" id="credit">
+        <div class="credit">
+            <h3>Credit to our team</h3>
+            <h4>Leader : Binay Rajbanshi ( designer & coder )</h4>
+            <h5>Member</h5>
+            <ul>
+                <li>
+                    Gaurav Rajbanshi ( helper & copy writer )
+                </li>
+
+                <li>
+                    Rohit Siwakoti ( images provider & helper )
+                </li>
+                <li>
+                    Subrat Rajbanshi( helper )
+                </li>
+            </ul>
+        </div>
+
+   </div>
+       
+
+
+       
+    </div>
+
+
+    <script>
+
+        var page1 = document.querySelector(".page1");
+
+        var profile = document.querySelector(".profile");
+        var login = document.querySelector(".login");
+        
+
+        function cursorEffect(){
+            let cursor = document.querySelector(".cursor");
+            let cursor1 = document.querySelector("#cursor");
+
+            function csr(){
+                document.addEventListener("mousemove", (dits)=>{
+                    cursor.style.left = dits.x + 'px';
+                    cursor.style.top = dits.y + 'px';
+                })
+                document.querySelector(".page3").addEventListener("mouseenter", (dits)=>{
+                    cursor.style.scale = 1;
+                    cursor.style.opacity = "100%";
+                })
+                document.querySelector(".page3").addEventListener("mouseleave", (dits)=>{
+                    cursor.style.scale = 0;
+                    cursor.style.opacity = "0%";
+                })
+            }
+
+            csr()
+
+            function csr2(){
+                document.addEventListener("mousemove", (dits)=>{
+                    cursor1.style.left = dits.x + 'px';
+                    cursor1.style.top = dits.y + 'px';
+                })
+                document.querySelector(".page6").addEventListener("mouseenter", (dits)=>{
+                    cursor1.style.scale = 1;
+                    cursor1.style.opacity = "100%";
+                })
+                document.querySelector(".page6").addEventListener("mouseleave", (dits)=>{
+                    cursor1.style.scale = 0;
+                    cursor1.style.opacity = "0%";
+                })
+            }
+
+            csr2()
+            
+           
+            
+        }
+        cursorEffect()
+
+
+        function form(){
+            var check = 0;
+            profile.addEventListener("click", ()=>{
+                if( check == 0 ){
+                    login.style.display = "flex";
+                    check = 1;
+                }else{
+                    login.style.display = "none";
+                    check = 0;
+                }
+
+            })
+        }
+        form()
+
+    </script>
+    
+
+
+    </div>
+</body>
+</html>
